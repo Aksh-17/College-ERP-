@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Admin • Campus Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dark-mode">
+    <div class="app">
+        <aside class="sidebar" id="sidebar">
+            <div class="brand"><img src="assets/logo.svg"><span>Campus Hub</span></div>
+            <nav>
+                <ul>
+                    <li data-view="dashboard" class="active">Dashboard</li>
+                    <li data-view="students">Students</li>
+                    <li data-view="courses">Courses</li>
+                    <li data-view="grades">Grades</li>
+                    <li data-view="settings">Settings</li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main">
+            <header class="topbar">
+                <div class="left"><button id="toggleBtn" class="btn small">☰</button>
+                    <h2 id="pageTitle">Dashboard</h2>
+                </div>
+                <div class="user"><span id="username">Admin</span><button class="btn ghost small"
+                        onclick="logout()">Logout</button></div>
+            </header>
+            <section class="content">
+                <div id="view-dashboard" class="view active">
+                    <div class="cards">
+                        <div class="card small">
+                            <div class="num" id="totalStudents">—</div>
+                            <div class="label">Students</div>
+                        </div>
+                        <div class="card small">
+                            <div class="num" id="totalCourses">—</div>
+                            <div class="label">Courses</div>
+                        </div>
+                        <div class="card small">
+                            <div class="num" id="avgAttendance">—%</div>
+                            <div class="label">Avg Attendance</div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <h3>Recent students</h3>
+                        <div class="table-wrap">
+                            <table class="table" id="studentsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Roll</th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>DOB</th>
+                                        <th>Email</th>
+                                        <th>Courses</th>
+                                        <th>Attendance</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="view-students" class="view">
+                    <div class="panel head">
+                        <h3>Students <button class="btn small" id="openAddStudent">+ Add Student</button></h3>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="table" id="studentsTable2">
+                            <thead>
+                                <tr>
+                                    <th>Roll</th>
+                                    <th>ID</th>
+                                    <th>First</th>
+                                    <th>Last</th>
+                                    <th>DOB</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="view-courses" class="view">
+                    <div class="panel head">
+                        <h3>Courses <button class="btn small" id="openAddCourse">+ Add Course</button></h3>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="table" id="coursesTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="view-grades" class="view">
+                    <div class="panel">
+                        <h3>Grades</h3>
+                        <p class="muted">Use faculty UI to submit grades, admin can view reports here later.</p>
+                    </div>
+                </div>
+                <div id="view-settings" class="view">
+                    <div class="panel">
+                        <h3>Settings</h3>
+                        <p class="muted">General settings placeholder.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div class="modal" id="modalStudent">
+        <div class="modal-card">
+            <h3>Add Student</h3>
+            <form id="addStudentForm"><label>First name<input name="first_name" required></label><label>Last name<input
+                        name="last_name" required></label><label>Email<input name="email" type="email"
+                        required></label><label>Password<input name="password" type="password"
+                        required></label><label>DOB<input name="date_of_birth" type="date"></label>
+                <div class="row"><button class="btn primary" type="submit">Create</button><button class="btn ghost"
+                        type="button" id="closeStudentModal">Cancel</button></div>
+            </form>
+            <p id="addStudentMsg" class="muted"></p>
+        </div>
+    </div>
+    <div class="modal" id="modalCourse">
+        <div class="modal-card">
+            <h3>Add Course</h3>
+            <form id="addCourseForm"><label>Course name<input name="course_name" required></label><label>Course
+                    code<input name="course_code" required></label><label>Description<textarea
+                        name="description"></textarea></label>
+                <div class="row"><button class="btn primary" type="submit">Create</button><button class="btn ghost"
+                        type="button" id="closeCourseModal">Cancel</button></div>
+            </form>
+            <p id="addCourseMsg" class="muted"></p>
+        </div>
+    </div>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

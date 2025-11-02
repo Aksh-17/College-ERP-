@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Campus Hub — Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dark-mode">
+    <div class="login-wrap">
+        <div class="login-card">
+            <h1>Campus Hub</h1>
+            <p class="muted">College portal</p>
+            <form id="loginForm" class="form"><label>Email<input id="email" type="email" required
+                        placeholder="you@uni.com"></label><label>Password<input id="password" type="password" required
+                        placeholder="password"></label>
+                <div class="row"><button class="btn primary" type="submit">Sign in</button><button class="btn ghost"
+                        type="button" onclick="demoCreds()">Demo</button></div>
+                <p id="error" class="error"></p>
+            </form>
+            <p class="small muted">Try admin1@university.com / student1@university.com / faculty1@university.com</p>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

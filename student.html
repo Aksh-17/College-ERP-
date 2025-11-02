@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Student • Campus Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dark-mode">
+    <div class="app">
+        <aside class="sidebar small">
+            <div class="brand"><img src="assets/logo.svg"><span>Campus Hub</span></div>
+            <nav>
+                <ul>
+                    <li data-view="overview" class="active">Overview</li>
+                    <li data-view="courses">Courses</li>
+                    <li data-view="grades">Grades</li>
+                    <li data-view="profile">Profile</li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main">
+            <header class="topbar">
+                <div class="left">
+                    <h2 id="pageTitle">Overview</h2>
+                </div>
+                <div class="user"><span id="studentName">Student</span><button class="btn ghost small"
+                        onclick="logout()">Logout</button></div>
+            </header>
+            <section class="content">
+                <div id="view-overview" class="view active">
+                    <div class="cards">
+                        <div class="card small">
+                            <div class="num" id="sCourses">—</div>
+                            <div class="label">Courses</div>
+                        </div>
+                        <div class="card small">
+                            <div class="num" id="sAttendance">—%</div>
+                            <div class="label">Attendance</div>
+                        </div>
+                        <div class="card small">
+                            <div class="num" id="sAvgGrade">—</div>
+                            <div class="label">Avg Grade</div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <h3>My Courses</h3>
+                        <div id="coursesList" class="cards-grid"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/student.js"></script>
+</body>
+
+</html>

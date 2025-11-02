@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Faculty • Campus Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dark-mode">
+    <div class="app small">
+        <aside class="sidebar">
+            <div class="brand"><img src="assets/logo.svg"><span>Campus Hub</span></div>
+            <nav>
+                <ul>
+                    <li data-view="classes" class="active">My Classes</li>
+                    <li data-view="attendance">Attendance</li>
+                    <li data-view="grades">Grades</li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main">
+            <header class="topbar">
+                <div class="left">
+                    <h2 id="pageTitle">Faculty</h2>
+                </div>
+                <div class="user"><span id="facultyName">Faculty</span><button class="btn ghost small"
+                        onclick="logout()">Logout</button></div>
+            </header>
+            <section class="content">
+                <div id="view-classes" class="view active">
+                    <div class="cards">
+                        <div class="card small">
+                            <div class="num" id="classCount">—</div>
+                            <div class="label">Classes</div>
+                        </div>
+                        <div class="card small">
+                            <div class="num" id="studentCount">—</div>
+                            <div class="label">Students</div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <h3>Submit Grade</h3>
+                        <form id="gradeForm" class="grid"><label>Enrollment ID<input id="enrollment_id" required
+                                    type="number"></label><label>Grade<input id="grade"
+                                    required></label><label>Attendance Date<input id="attendance_date" type="date"
+                                    required></label><label>Status<select id="status">
+                                    <option>Present</option>
+                                    <option>Absent</option>
+                                    <option>Late</option>
+                                </select></label>
+                            <div class="row"><button class="btn primary" type="submit">Submit</button></div>
+                        </form>
+                        <p id="gradeResult" class="muted"></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/faculty.js"></script>
+</body>
+
+</html>
